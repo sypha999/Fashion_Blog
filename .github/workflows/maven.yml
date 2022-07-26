@@ -27,7 +27,7 @@ jobs:
 
     - name: Build and Push Docker image to Docker Hub
       uses: mr-smithers-excellent/docker-build-push@v5
-        with:
+      with:
           image: daton1/fashion_blog
           tags: latest
           registry: docker.io
