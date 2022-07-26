@@ -43,7 +43,7 @@ public class AdminServiceImple implements AdminServices{
     @Override
     public void createPost(PostDto postDto) {
         if(httpSession.getAttribute("adminRole")!=role.ADMIN){
-            throw new CustomAppException("You are unauthorized to perfome this action",HttpStatus.FORBIDDEN);
+            throw new CustomAppException("You are unauthorized to perform this action",HttpStatus.FORBIDDEN);
         }
         Post post =new Post();
         post.setCategory(Category.valueOf(postDto.getCategory()));
@@ -56,7 +56,7 @@ public class AdminServiceImple implements AdminServices{
     @Override
     public LikedPostDto viewLiked(Long post_id) {
         if(httpSession.getAttribute("adminRole")!=role.ADMIN){
-            throw new CustomAppException("You are unauthorized to perfome this action",HttpStatus.FORBIDDEN);
+            throw new CustomAppException("You are unauthorized to perform this action",HttpStatus.FORBIDDEN);
         }
         Post favs=postRepository.findById(post_id).orElseThrow(()-> new CustomAppException("post not found", HttpStatus.NOT_FOUND));
         LikedPostDto fav = new LikedPostDto();

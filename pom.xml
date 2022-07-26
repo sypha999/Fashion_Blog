@@ -64,6 +64,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>fashion_blog</finalName>
     </build>
 
 </project>
