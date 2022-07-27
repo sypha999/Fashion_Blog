@@ -86,7 +86,7 @@ public class AdminServiceImple implements AdminServices{
     @Override
     public void register(SignUpDto signUpDto) {
         Optional<Customer> cusInDB = customerRepository.findByEmail(signUpDto.getEmail());
-        if(cusInDB.isPresent()){throw new CustomAppException("Email"+signUpDto.getEmail()+"is already in use", HttpStatus.CONFLICT);}
+        if(cusInDB.isPresent()){throw new CustomAppException("Email "+signUpDto.getEmail()+" is already in use", HttpStatus.CONFLICT);}
         Customer customer=new Customer();
         customer.setFullName(signUpDto.getFullName());
         customer.setPassword(signUpDto.getPassword());
