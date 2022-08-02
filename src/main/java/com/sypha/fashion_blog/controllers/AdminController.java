@@ -30,6 +30,8 @@ public class AdminController {
     @Autowired
     PostRepository postRepository;
 
+
+
     Role role;
     @Autowired
     HttpSession httpSession;
